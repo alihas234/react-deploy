@@ -1,0 +1,15 @@
+::-webkit-scrollbar {
+  background-image: linear-gradient(to bottom, #ffffff52, #ffffff6b),
+    url("https://i.ibb.co/sgrfrCk/bghd.jpg");
+  width: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background-image: linear-gradient(to bottom, #1e262cb6, #1e262cb6),
+    url("https://i.ibb.co/sgrfrCk/bghd.jpg");
+  border-radius: 3px;
+}
+/* All Number Input Default Button Hidden */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}

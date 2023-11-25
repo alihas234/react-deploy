@@ -1,0 +1,66 @@
+::-webkit-scrollbar {
+  background: #006df200 !important;
+  width: 4px !important;
+}
+::-webkit-scrollbar-thumb {
+  background: #2b3577;
+}
+.dashboardContainer {
+  overflow-y: hidden;
+  overflow-x: hidden !important;
+  height: 100vh;
+}
+.dashboardOverflow {
+  border-radius: 5px !important;
+  padding-top: 5px !important;
+  padding-left: 15px !important;
+  height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden !important;
+  margin-right: 10px !important;
+}
+.border1 {
+  background-color: #2b3577;
+  height: 4px !important;
+  width: 150px !important;
+}
+.border2 {
+  border-left: 5px solid #2b3577 !important;
+  height: 130px;
+  position: absolute;
+}
+
+.dashboardBackgroundImage {
+  background-image: url("./spaceStar.png");
+  background-position: center !important;
+  animation: zoom 30s infinite;
+}
+.dashboardBackgroundImage2 {
+  background-image: url("./spaceStar.png");
+  background-position: center !important;
+  animation: zoom2 50s infinite;
+}
+
+@keyframes zoom {
+  0% {
+    background-size: 150%;
+  }
+  50% {
+    background-size: 120%;
+  }
+  100% {
+    background-size: 150%;
+  }
+}
+
+@keyframes zoom2 {
+  0% {
+    background-size: 50%;
+  }
+  50% {
+    background-size: 30%;
+  }
+  100% {
+    background-size: 50%;
+  }
+}

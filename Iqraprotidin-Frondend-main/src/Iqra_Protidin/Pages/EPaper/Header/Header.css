@@ -1,0 +1,15 @@
+.onlineHome:hover {
+  transform: scale(1.1);
+  transition: 500ms;
+}
+.onlineHome {
+  transform: scale(1);
+  transition: 500ms;
+}
+.onlineHome:hover > a {
+  color: rgb(247, 56, 56) !important;
+}
+.onlineLink {
+  display: flex;
+  align-items: center;
+}

@@ -1,0 +1,56 @@
+.navbarLinks::after {
+  content: "|";
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.navbarMainButtons:hover {
+  transform: scale(0.9);
+  transition: 500ms;
+}
+.ePaper > img {
+  transform: scale(1);
+  transition: 500ms;
+}
+.ePaper:hover > img {
+  transform: scale(1.7);
+  transition: 500ms;
+}
+
+.navbarMainButtons2 {
+  display: block !important;
+  text-align: start !important;
+  margin-top: 15px;
+  background-image: linear-gradient(to top, #161c20, #757575a2),
+    url("https://i.ibb.co/sgrfrCk/bghd.jpg");
+  padding: 10px 20px;
+  padding-left: 30px;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  font-weight: bold;
+  color: #ffffff !important;
+}
+.navbarMainButtons2:hover {
+  transform: scale(1.08);
+}
+.navbarMainButtons2::after {
+  content: " >";
+}
+@media only screen and (max-width: 900px) {
+  .navbarMargin {
+    margin-top: 125px !important;
+  }
+  .navItemRes {
+    display: none !important;
+  }
+  .logoAlign {
+    width: 100%;
+  }
+  .logoAddAlign {
+    margin-top: 75px !important;
+  }
+}
+@media only screen and (min-width: 900px) {
+  .navItemResUp {
+    display: none !important;
+  }
+}

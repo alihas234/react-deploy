@@ -1,0 +1,27 @@
+.BannerContainer {
+  background-image: url(https://i.ibb.co/cYpJ6q3/other-Banner.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 35vh;
+  margin-top: 30px;
+}
+.BannerContainer2 {
+  background-color: #0b2750c5;
+  height: 35vh;
+}
+.bannerNames {
+  font-size: 70px !important;
+  font-weight: bold !important;
+}
+@media only screen and (max-width: 768px) {
+  .bannerNames {
+    font-size: 50px !important;
+  }
+  .BannerContainer {
+    height: 35vh;
+  }
+  .BannerContainer2 {
+    height: 35vh;
+  }
+}

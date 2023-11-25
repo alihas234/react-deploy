@@ -1,0 +1,114 @@
+.footerContainer {
+  background-image: linear-gradient(to top, #1e262cd7, #1e262cec),
+    url("https://i.ibb.co/sgrfrCk/bghd.jpg");
+  color: #fff;
+  padding-top: 100px;
+  clip-path: polygon(0 24%, 100% 0, 100% 100%, 0% 100%);
+  text-align: center;
+}
+.footerContainer2 {
+  background-color: #dd3333;
+  color: #fff;
+  margin-top: 10px;
+  clip-path: polygon(53% 11%, 100% 0, 100% 100%, 0 100%, 0 0);
+}
+/* Footar Ancors  */
+.footar-icon a {
+  text-decoration: none;
+  color: rgb(73, 73, 73);
+  font-size: 25px;
+}
+/* Footer Ancors  */
+.footer-icon a {
+  text-decoration: none;
+  color: rgb(177, 177, 177);
+  font-size: 25px;
+}
+
+/* Footer Social Icon  */
+
+.fb {
+  transform: scale(1);
+  transition: 500ms;
+}
+.fb:hover {
+  transform: scale(1.5);
+  color: blue;
+  transition: 500ms;
+}
+.fbf {
+  transform: translate(0px, 0px);
+  transition: 500ms;
+}
+.fbf:hover {
+  transform: translate(0px, -7px);
+  transition: 500ms;
+  color: #087aea;
+}
+.ytf {
+  transform: translate(0px, 0px);
+  transition: 500ms;
+}
+.ytf:hover {
+  transform: translate(0px, -7px);
+  transition: 500ms;
+  color: red;
+}
+.ins {
+  transform: translate(0px, 0px);
+  transition: 500ms;
+}
+.ins:hover {
+  transform: translate(0px, -7px);
+  transition: 500ms;
+  color: rgb(255, 6, 180);
+}
+.twt {
+  transform: translate(0px, 0px);
+  transition: 500ms;
+}
+.twt:hover {
+  transform: translate(0px, -7px);
+  transition: 500ms;
+  color: rgb(11, 181, 248);
+}
+.yt {
+  transform: scale(1);
+  transition: 500ms;
+}
+.yt:hover {
+  transform: scale(1.5);
+  color: red;
+  transition: 500ms;
+}
+.fontTeko {
+  font-family: "Teko", sans-serif;
+}
+.footer_nav {
+  text-decoration: none;
+}
+.footer_nav:hover {
+  text-decoration: underline;
+}
+.phoneNumber {
+  color: #fff;
+  text-decoration: none;
+}
+.phoneNumber:hover {
+  color: red !important;
+}
+.copyright > p {
+  color: rgb(0, 255, 213);
+  font-family: "Sora", sans-serif;
+  display: inline;
+}
+.copyright:hover > p {
+  color: rgb(255, 4, 4);
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 900px) {
+  .footerResponsive {
+    margin-top: 100px !important;
+  }
+}
