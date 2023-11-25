@@ -145,18 +145,21 @@ const NewsDetails = () => {
                               {/* General tags */}
                               <title>{newsTitle}</title>
                               <meta property="og:image" content={image} />
-                              {/* <meta
+                              <meta
                                 name="fb:app_id"
                                 content="617144390234776"
-                              /> */}
+                              />
                               <meta
-                                property="og:title"
+                                name="facebook:title"
                                 content={newsTitle || ""}
                               />
-                              <meta property="og:image" content={image || ""} />
                               <meta
-                                property="og:description"
+                                name="facebook:description"
                                 content={newsContent || ""}
+                              />
+                              <meta
+                                name="facebook:image:src"
+                                content={image || ""}
                               />
                               <meta name="facebook:card" content="summary" />
 
