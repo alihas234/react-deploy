@@ -23,6 +23,8 @@ const NewsDetails = () => {
       .then((data) => setMatchNews(data));
   }, [uniqueID]);
 
+  const newsDetails = matchNews[0] || {};
+
   return (
     <Box sx={{ mt: "60px" }}>
       <Container>
@@ -143,100 +145,90 @@ const NewsDetails = () => {
                           >
                             <Helmet>
                               {/* General tags */}
+                              <title>
+                                {newsDetails.newsTitle || "Default Title"}
+                              </title>
+                              <meta
+                                property="og:image"
+                                content={
+                                  newsDetails.image || "Default Image URL"
+                                }
+                              />
+                              <meta
+                                name="description"
+                                content={
+                                  newsDetails.newsContent ||
+                                  "Default Description"
+                                }
+                              />
+
+                              {/* Facebook Card tags */}
                               <meta property="og:url" content={url} />
                               <meta property="og:type" content="article" />
                               <meta
                                 property="og:title"
-                                content={newsTitle || ""}
+                                content={
+                                  newsDetails.newsTitle || "Default Title"
+                                }
                               />
                               <meta
                                 property="og:description"
-                                content={newsContent || ""}
+                                content={
+                                  newsDetails.newsContent ||
+                                  "Default Description"
+                                }
                               />
                               <meta
                                 property="fb:app_id"
                                 content="your_facebook_app_id"
                               />
-                              <title>{newsTitle}</title>
-                              <meta property="og:image" content={image} />
-                              <meta
-                                name="fb:app_id"
-                                content="617144390234776"
-                              />
-                              <meta
-                                name="facebook:title"
-                                content={newsTitle || ""}
-                              />
-                              <meta
-                                name="facebook:description"
-                                content={newsContent || ""}
-                              />
-                              <meta
-                                name="facebook:image:src"
-                                content={image || ""}
-                              />
-                              <meta name="facebook:card" content="summary" />
 
                               {/* Twitter Card tags */}
+                              <meta name="twitter:url" content={url} />
                               <meta
                                 name="twitter:title"
-                                content={newsTitle || ""}
+                                content={
+                                  newsDetails.newsTitle || "Default Title"
+                                }
                               />
                               <meta
                                 name="twitter:description"
-                                content={newsContent || ""}
+                                content={
+                                  newsDetails.newsContent ||
+                                  "Default Description"
+                                }
                               />
                               <meta
-                                name="twitter:image:src"
-                                content={image || ""}
+                                name="twitter:image"
+                                content={
+                                  newsDetails.image || "Default Image URL"
+                                }
                               />
-                              <meta name="twitter:card" content="summary" />
+                              <meta
+                                name="twitter:card"
+                                content="summary_large_image"
+                              />
                             </Helmet>
                             <FacebookShareButton
                               url={url}
-                              quote={newsTitle}
-                              style={{
-                                border: "none",
-                                background: "none",
-                              }}
-                              onClick={console.log(newsTitle)}
+                              quote={newsDetails.newsTitle}
+                              style={{ border: "none", background: "none" }}
+                              onClick={() => console.log(newsDetails.newsTitle)}
                             >
-                              <Button
-                                variant="contained"
-                                sx={{
-                                  textTransform: "unset",
-                                  backgroundColor: "#124E6C",
-                                  "&:hover": {
-                                    backgroundColor: "#087aea",
-                                    transform: "scale(1.1)",
-                                  },
-                                }}
-                              >
+                              <Button variant="contained">
                                 <i className="fab fa-facebook me-2 fs-4"></i>{" "}
                                 <span style={{ fontWeight: "bold" }}>
                                   Facebook
                                 </span>
                               </Button>
                             </FacebookShareButton>
+
                             <TwitterShareButton
                               url={url}
-                              title={newsTitle}
-                              style={{
-                                border: "none",
-                                background: "none",
-                              }}
+                              title={newsDetails.newsTitle}
+                              style={{ border: "none", background: "none" }}
                             >
-                              <Button
-                                variant="contained"
-                                sx={{
-                                  textTransform: "unset",
-                                  backgroundColor: "#124E6C",
-                                  "&:hover": {
-                                    backgroundColor: "rgb(11, 181, 248)",
-                                    transform: "scale(1.1)",
-                                  },
-                                }}
-                              >
+                              <Button variant="contained">
                                 <i className="fab fa-twitter me-2 fs-4"></i>{" "}
                                 <span style={{ fontWeight: "bold" }}>
                                   Twitter
