@@ -16,7 +16,7 @@ const NewsDetails = () => {
   const { uniqueID } = useParams();
   const [matchNews, setMatchNews] = useState([]);
 
-  const url = window.location;
+  const url = windows.location;
 
   useEffect(() => {
     fetch(`https://server.eiqraprotidin.com/news/${uniqueID}`)
@@ -144,14 +144,21 @@ const NewsDetails = () => {
                           >
                             <Helmet>
                               {/* General tags */}
-                              <title>{newsTitle}</title>
-                              <meta property="og:image" content={image} />
+                              <title>{matchNews?.[0]?.newsTitle}</title>
+                              <meta
+                                property="og:image"
+                                content={matchNews?.[0]?.image}
+                              />
+                              <meta
+                                property="og:description"
+                                content={matchNews?.[0]?.newsContent}
+                              />
                               <meta property="og:url" content={url} />
                               <meta
                                 name="fb:app_id"
                                 content="617144390234776"
                               />
-                              <meta name="description" content={newsContent} />
+                              {/* <meta name="description" content={newsContent} /> */}
 
                               {/* Twitter Card tags
                               <meta
