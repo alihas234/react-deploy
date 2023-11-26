@@ -167,19 +167,19 @@ const NewsDetails = () => {
                             </Helmet>
                             <FacebookShareButton
                               url={url}
-                              quote={newsTitle}
+                              quote={newsContent}
                               style={{ border: "none", background: "none" }}
-                              {...{
-                                og: {
-                                  title: newsTitle,
-                                  description: newsContent,
-                                  image: {
-                                    url: image,
-                                    width: 500,
-                                    height: 300,
-                                  },
-                                },
-                              }}
+                              // {...{
+                              //   og: {
+                              //     title: newsTitle,
+                              //     description: newsContent,
+                              //     image: {
+                              //       url: image,
+                              //       width: 500,
+                              //       height: 300,
+                              //     },
+                              //   },
+                              // }}
                             >
                               <Button
                                 variant="contained"
