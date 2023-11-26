@@ -16,7 +16,7 @@ const NewsDetails = () => {
   const { uniqueID } = useParams();
   const [matchNews, setMatchNews] = useState([]);
 
-  const url = windows.location;
+  const url = window.location.href;
 
   useEffect(() => {
     fetch(`https://server.eiqraprotidin.com/news/${uniqueID}`)
