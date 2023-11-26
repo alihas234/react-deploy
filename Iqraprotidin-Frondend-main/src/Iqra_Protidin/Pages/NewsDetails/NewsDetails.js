@@ -152,7 +152,10 @@ const NewsDetails = () => {
                               {/* General tags */}
                               <title>{newsTitle}</title>
                               <meta property="og:image" content={image} />
-                              <meta property="og:url" content={url} />
+                              <meta
+                                property="og:url"
+                                content={`https://eiqraprotidin.com/news/${_id}`}
+                              />
                               <meta
                                 name="fb:app_id"
                                 content="617144390234776"
@@ -175,7 +178,7 @@ const NewsDetails = () => {
                               <meta name="twitter:card" content="summary" /> */}
                             </Helmet>
                             <FacebookShareButton
-                              url={url}
+                              url={`https://eiqraprotidin.com/news/${_id}`}
                               quote={`${matchNews.newsTitle} - ${matchNews.newsContent}`}
                               style={{ border: "none", background: "none" }}
                               // {...{
