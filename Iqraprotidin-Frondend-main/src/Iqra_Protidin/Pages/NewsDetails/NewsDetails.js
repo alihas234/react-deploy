@@ -142,6 +142,35 @@ const NewsDetails = () => {
                               justifyContent: "space-around",
                             }}
                           >
+                            <Helmet>
+                              {/* General tags */}
+                              <title>{newsTitle}</title>
+                              <meta property="og:image" content={image} />
+                              <meta
+                                property="og:url"
+                                content={`https://react-deploy-vercel1.vercel.app/news/${_id}`}
+                              />
+                              <meta
+                                name="fb:app_id"
+                                content="617144390234776"
+                              />
+                              <meta name="description" content={newsContent} />
+
+                              {/* Twitter Card tags
+                              <meta
+                                name="twitter:title"
+                                content={newsTitle || ""}
+                              />
+                              <meta
+                                name="twitter:description"
+                                content={newsContent || ""}
+                              />
+                              <meta
+                                name="twitter:image:src"
+                                content={image || ""}
+                              />
+                              <meta name="twitter:card" content="summary" /> */}
+                            </Helmet>
                             <FacebookShareButton
                               url={`https://react-deploy-vercel1.vercel.app/news/${_id}`}
                               quote={"Nice"}
