@@ -145,7 +145,10 @@ const NewsDetails = () => {
                               {/* General tags */}
                               {/* <title>{newsTitle}</title>
                               <meta property="og:image" content={image} /> */}
-                              <meta name="fb:app_id" content={_id} />
+                              <meta
+                                name="fb:app_id"
+                                content="617144390234776"
+                              />
                               <meta property="og:title" content={newsTitle} />
                               <meta name="description" content={newsContent} />
                               <meta property="og:image" content={image} />
