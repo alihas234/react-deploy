@@ -11,13 +11,12 @@ import RelatedNews from "../HomeContainer/RelatedNews/RelatedNews";
 import { useParams } from "react-router-dom";
 import { FacebookShareButton, TwitterShareButton } from "react-share";
 import { Helmet } from "react-helmet";
-import { useLocation } from "react-router-dom";
 
 const NewsDetails = () => {
   const { uniqueID } = useParams();
   const [matchNews, setMatchNews] = useState([]);
-  const location = useLocation();
-  const url = `${window.location.origin}${location.pathname}`;
+  const { pathname } = useLocation();
+  const url = `${window.location.origin}${pathname}`;
 
   useEffect(() => {
     fetch(`https://server.eiqraprotidin.com/news/${uniqueID}`)
