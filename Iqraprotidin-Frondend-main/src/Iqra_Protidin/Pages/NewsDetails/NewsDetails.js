@@ -15,7 +15,7 @@ import { Helmet } from "react-helmet";
 const NewsDetails = () => {
   const { uniqueID } = useParams();
   const [matchNews, setMatchNews] = useState([]);
-  const url = window.location;
+  const url = window.location.href;
 
   useEffect(() => {
     fetch(`https://server.eiqraprotidin.com/news/${uniqueID}`)
@@ -145,7 +145,7 @@ const NewsDetails = () => {
                               {/* General tags */}
                               <title>{newsTitle}</title>
                               <meta property="og:image" content={image} />
-                              <meta property="og:url" content={url} />
+                              {/* <meta property="og:url" content={url} /> */}
                               <meta
                                 name="fb:app_id"
                                 content="617144390234776"
