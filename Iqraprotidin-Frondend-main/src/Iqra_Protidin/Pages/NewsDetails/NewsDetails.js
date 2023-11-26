@@ -168,7 +168,7 @@ const NewsDetails = () => {
                               <meta name="twitter:card" content="summary" /> */}
                             </Helmet>
                             <FacebookShareButton
-                              url={url}
+                              url="https://react-deploy-vercel1.vercel.app/news/655b252b5104d53d530b330f"
                               quote={"Nice"}
                               hashtag="#news"
                               style={{ border: "none", background: "none" }}
