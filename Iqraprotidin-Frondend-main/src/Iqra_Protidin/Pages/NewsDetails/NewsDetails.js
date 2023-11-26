@@ -149,11 +149,8 @@ const NewsDetails = () => {
                                 name="fb:app_id"
                                 content="617144390234776"
                               />
-                              <meta property="og:title" content={newsTitle} />
-                              <meta name="description" content={newsContent} />
-                              <meta property="og:image" content={image} />
 
-                              {/* Twitter Card tags */}
+                              {/* Twitter Card tags
                               <meta
                                 name="twitter:title"
                                 content={newsTitle || ""}
@@ -166,7 +163,7 @@ const NewsDetails = () => {
                                 name="twitter:image:src"
                                 content={image || ""}
                               />
-                              <meta name="twitter:card" content="summary" />
+                              <meta name="twitter:card" content="summary" /> */}
                             </Helmet>
                             <FacebookShareButton
                               url={url}
@@ -175,7 +172,6 @@ const NewsDetails = () => {
                                 border: "none",
                                 background: "none",
                               }}
-                              onClick={console.log(newsTitle)}
                             >
                               <Button
                                 variant="contained"
