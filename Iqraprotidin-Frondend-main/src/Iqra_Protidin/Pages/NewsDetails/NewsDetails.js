@@ -15,7 +15,7 @@ import { Helmet } from "react-helmet";
 const NewsDetails = () => {
   const { uniqueID } = useParams();
   const [matchNews, setMatchNews] = useState([]);
-  const [url, setUrl] = useState("");
+  // const [url, setUrl] = useState("");
 
   useEffect(() => {
     fetch(`https://server.eiqraprotidin.com/news/${uniqueID}`)
@@ -23,10 +23,10 @@ const NewsDetails = () => {
       .then((data) => {
         setMatchNews(data);
 
-        const constructedUrl = `https://eiqraprotidin.com/news/${uniqueID}`;
-        setUrl(constructedUrl);
+        // const constructedUrl = `https://eiqraprotidin.com/news/${uniqueID}`;
+        // setUrl(constructedUrl);
 
-        console.log(constructedUrl);
+        // console.log(constructedUrl);
       });
   }, [uniqueID]);
 
