@@ -79,6 +79,19 @@ function App() {
           >
             <Navbar />
           </Box>
+          <Helmet>
+            <title>ইকরা প্রতিদিন</title>
+            <meta
+              property="og:image"
+              content="https://i.ibb.co/6s8Dc1N/300375281-501355718661040-8852605997729506088-n-1.jpg"
+              data-rh="true"
+            />
+            <meta
+              name="description"
+              content="সত্য প্রকাশে আপোষহীন, দৈনিক ইকরা প্রতিদিন"
+              data-rh="true"
+            />
+          </Helmet>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
@@ -110,19 +123,6 @@ function App() {
                 </DashboardRoute>
               }
             />
-            <Helmet>
-              <title>ইকরা প্রতিদিন</title>
-              <meta
-                property="og:image"
-                content="https://i.ibb.co/6s8Dc1N/300375281-501355718661040-8852605997729506088-n-1.jpg"
-                data-rh="true"
-              />
-              <meta
-                name="description"
-                content="সত্য প্রকাশে আপোষহীন, দৈনিক ইকরা প্রতিদিন"
-                data-rh="true"
-              />
-            </Helmet>
 
             <Route path="news/:uniqueID" element={<NewsDetails />} />
             <Route path="/e-paper" element={<EPaperContainer />} />
