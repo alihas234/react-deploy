@@ -10,17 +10,26 @@ import ShareRoundedIcon from "@mui/icons-material/ShareRounded";
 import RelatedNews from "../HomeContainer/RelatedNews/RelatedNews";
 import { useParams } from "react-router-dom";
 import { FacebookShareButton, TwitterShareButton } from "react-share";
-import { Helmet } from "react-helmet-async";
+import { Helmet } from "react-helmet";
 
-const NewsDetails = () => {
-  const { uniqueID } = useParams();
+const NewsDetails = ({ match }) => {
+  const { uniqueID } = match.params;
   const [matchNews, setMatchNews] = useState([]);
-  const url = window.location;
 
   useEffect(() => {
-    fetch(`https://server.eiqraprotidin.com/news/${uniqueID}`)
-      .then((result) => result.json())
-      .then((data) => setMatchNews(data));
+    const fetchNewsDetails = async () => {
+      try {
+        const response = await fetch(
+          `https://server.eiqraprotidin.com/news/${uniqueID}`
+        );
+        const data = await response.json();
+        setMatchNews(data);
+      } catch (error) {
+        console.error("Error fetching news details:", error);
+      }
+    };
+
+    fetchNewsDetails();
   }, [uniqueID]);
 
   return (
@@ -43,6 +52,40 @@ const NewsDetails = () => {
                   }) => (
                     <Box key={_id}>
                       <Box sx={{ mt: "15px" }}>
+                        <Helmet>
+                          {/* General tags */}
+                          <title>{newsTitle}</title>
+                          <meta property="og:image" content={image} />
+                          <meta name="fb:app_id" content="617144390234776" />
+                          <meta
+                            name="facebook:title"
+                            content={newsTitle || ""}
+                          />
+                          <meta
+                            name="facebook:description"
+                            content={newsContent || ""}
+                          />
+                          <meta
+                            name="facebook:image:src"
+                            content={image || ""}
+                          />
+                          <meta name="facebook:card" content="summary" />
+
+                          {/* Twitter Card tags */}
+                          <meta
+                            name="twitter:title"
+                            content={newsTitle || ""}
+                          />
+                          <meta
+                            name="twitter:description"
+                            content={newsContent || ""}
+                          />
+                          <meta
+                            name="twitter:image:src"
+                            content={image || ""}
+                          />
+                          <meta name="twitter:card" content="summary" />
+                        </Helmet>
                         <Typography variant="h4" sx={{ fontWeight: "bold" }}>
                           {newsTitle}
                         </Typography>
@@ -141,46 +184,10 @@ const NewsDetails = () => {
                               justifyContent: "space-around",
                             }}
                           >
-                            <Helmet>
-                              {/* General tags */}
-                              <title>{newsTitle}</title>
-                              <meta property="og:image" content={image} />
-                              <meta name="description" content={newsContent} />
-
-                              {/* Facebook Card tags */}
-                              <meta property="og:url" content={url} />
-                              <meta property="og:type" content="article" />
-                              <meta property="og:title" content={newsTitle} />
-                              <meta
-                                property="og:description"
-                                content={newsContent}
-                              />
-                              <meta
-                                property="fb:app_id"
-                                content="your_facebook_app_id"
-                              />
-
-                              {/* Twitter Card tags */}
-                              <meta name="twitter:url" content={url} />
-                              <meta name="twitter:title" content={newsTitle} />
-                              <meta
-                                name="twitter:description"
-                                content={newsContent}
-                              />
-                              <meta name="twitter:image" content={image} />
-                              <meta
-                                name="twitter:card"
-                                content="summary_large_image"
-                              />
-                            </Helmet>
                             <FacebookShareButton
-                              url={url}
+                              url={window.location.href}
                               quote={newsTitle}
-                              style={{
-                                border: "none",
-                                background: "none",
-                              }}
-                              onClick={console.log(newsTitle)}
+                              style={{ border: "none", background: "none" }}
                             >
                               <Button
                                 variant="contained"
@@ -200,12 +207,9 @@ const NewsDetails = () => {
                               </Button>
                             </FacebookShareButton>
                             <TwitterShareButton
-                              url={url}
+                              url={window.location.href}
                               title={newsTitle}
-                              style={{
-                                border: "none",
-                                background: "none",
-                              }}
+                              style={{ border: "none", background: "none" }}
                             >
                               <Button
                                 variant="contained"
