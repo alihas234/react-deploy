@@ -8,7 +8,7 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 import CategoryIcon from "@mui/icons-material/Category";
 import ShareRoundedIcon from "@mui/icons-material/ShareRounded";
 import RelatedNews from "../HomeContainer/RelatedNews/RelatedNews";
-import { useParams } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 import { FacebookShareButton, TwitterShareButton } from "react-share";
 import { Helmet } from "react-helmet";
 
