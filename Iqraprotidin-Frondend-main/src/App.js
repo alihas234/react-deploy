@@ -54,23 +54,21 @@ function App() {
 
   return (
     <AuthContext className="App" sx={{ overflowX: "hidden" }}>
+      <Helmet>
+        <title>ইকরা প্রতিদিন</title>
+        <meta
+          property="og:image"
+          content="https://i.ibb.co/6s8Dc1N/300375281-501355718661040-8852605997729506088-n-1.jpg"
+        />
+        <meta
+          name="description"
+          content="সত্য প্রকাশে আপোষহীন, দৈনিক ইকরা প্রতিদিন"
+        />
+      </Helmet>
       {preloader.length === 0 && loading ? (
         <Preloader />
       ) : (
         <Router>
-          <Helmet>
-            <title>ইকরা প্রতিদিন</title>
-            <meta
-              property="og:image"
-              content="https://i.ibb.co/6s8Dc1N/300375281-501355718661040-8852605997729506088-n-1.jpg"
-              data-rh="true"
-            />
-            <meta
-              name="description"
-              content="সত্য প্রকাশে আপোষহীন, দৈনিক ইকরা প্রতিদিন"
-              data-rh="true"
-            />
-          </Helmet>
           <Box
             sx={
               (location === "/e-paper" && { display: "none" }) ||
