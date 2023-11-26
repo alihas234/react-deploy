@@ -10,7 +10,7 @@ import ShareRoundedIcon from "@mui/icons-material/ShareRounded";
 import RelatedNews from "../HomeContainer/RelatedNews/RelatedNews";
 import { useParams } from "react-router-dom";
 import { FacebookShareButton, TwitterShareButton } from "react-share";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 const NewsDetails = () => {
   const { uniqueID } = useParams();
@@ -145,37 +145,33 @@ const NewsDetails = () => {
                               {/* General tags */}
                               <title>{newsTitle}</title>
                               <meta property="og:image" content={image} />
+                              <meta name="description" content={newsContent} />
+
+                              {/* Facebook Card tags */}
+                              <meta property="og:url" content={url} />
+                              <meta property="og:type" content="article" />
+                              <meta property="og:title" content={newsTitle} />
                               <meta
-                                name="fb:app_id"
-                                content="617144390234776"
+                                property="og:description"
+                                content={newsContent}
                               />
                               <meta
-                                name="facebook:title"
-                                content={newsTitle || ""}
-                              />
-                              <meta
-                                name="facebook:description"
-                                content={newsContent || ""}
-                              />
-                              <meta
-                                name="facebook:image:src"
-                                content={image || ""}
+                                property="fb:app_id"
+                                content="your_facebook_app_id"
                               />
 
                               {/* Twitter Card tags */}
-                              <meta
-                                name="twitter:title"
-                                content={newsTitle || ""}
-                              />
+                              <meta name="twitter:url" content={url} />
+                              <meta name="twitter:title" content={newsTitle} />
                               <meta
                                 name="twitter:description"
-                                content={newsContent || ""}
+                                content={newsContent}
                               />
+                              <meta name="twitter:image" content={image} />
                               <meta
-                                name="twitter:image:src"
-                                content={image || ""}
+                                name="twitter:card"
+                                content="summary_large_image"
                               />
-                              <meta name="twitter:card" content="summary" />
                             </Helmet>
                             <FacebookShareButton
                               url={url}
