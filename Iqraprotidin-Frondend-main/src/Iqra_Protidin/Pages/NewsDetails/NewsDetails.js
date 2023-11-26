@@ -16,7 +16,7 @@ const NewsDetails = () => {
   const { uniqueID } = useParams();
   const [matchNews, setMatchNews] = useState([]);
 
-  // const url = `https://react-deploy-vercel1.vercel.app/news/${uniqueID}`;
+  const url = window.location.href;
 
   useEffect(() => {
     fetch(`https://server.eiqraprotidin.com/news/${uniqueID}`)
@@ -146,10 +146,7 @@ const NewsDetails = () => {
                               {/* General tags */}
                               <title>{newsTitle}</title>
                               <meta property="og:image" content={image} />
-                              <meta
-                                property="og:url"
-                                content={`https://react-deploy-vercel1.vercel.app/news/${_id}`}
-                              />
+                              <meta property="og:url" content={url} />
                               <meta
                                 name="fb:app_id"
                                 content="617144390234776"
@@ -172,7 +169,7 @@ const NewsDetails = () => {
                               <meta name="twitter:card" content="summary" /> */}
                             </Helmet>
                             <FacebookShareButton
-                              url={`https://react-deploy-vercel1.vercel.app/news/${_id}`}
+                              url={url}
                               quote={"Nice"}
                               style={{ border: "none", background: "none" }}
                               // {...{
@@ -187,7 +184,7 @@ const NewsDetails = () => {
                               //   },
                               // }}
                               onClick={console.log(
-                                // url,
+                                url,
                                 newsTitle,
                                 newsContent,
                                 image
@@ -211,7 +208,7 @@ const NewsDetails = () => {
                               </Button>
                             </FacebookShareButton>
                             <TwitterShareButton
-                              url={`https://react-deploy-vercel1.vercel.app/news/${_id}`}
+                              url={url}
                               title={newsTitle}
                               style={{
                                 border: "none",
