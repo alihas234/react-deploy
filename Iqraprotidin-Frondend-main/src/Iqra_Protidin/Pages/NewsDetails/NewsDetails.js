@@ -143,19 +143,13 @@ const NewsDetails = () => {
                           >
                             <Helmet>
                               {/* General tags */}
-                              <title>{newsTitle}</title>
-                              <meta property="og:image" content={image} />
-                              <meta
-                                name="fb:app_id"
-                                content="617144390234776"
-                              />
+                              {/* <title>{newsTitle}</title>
+                              <meta property="og:image" content={image} /> */}
+                              <meta name="fb:app_id" content={_id} />
                               <meta property="og:title" content={newsTitle} />
-                              <meta
-                                property="og:description"
-                                content={newsContent}
-                              />
+                              <meta name="description" content={newsContent} />
                               <meta property="og:image" content={image} />
-                              <meta property="og:url" content={url} />
+                              {/* <meta property="og:url" content={url} /> */}
                               <meta name="facebook:card" content="summary" />
 
                               {/* Twitter Card tags */}
