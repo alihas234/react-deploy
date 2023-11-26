@@ -179,7 +179,7 @@ const NewsDetails = () => {
                             </Helmet>
                             <FacebookShareButton
                               url={`https://eiqraprotidin.com/news/${_id}`}
-                              quote={`${matchNews.newsTitle} - ${matchNews.newsContent}`}
+                              quote={newsTitle}
                               style={{ border: "none", background: "none" }}
                               // {...{
                               //   og: {
