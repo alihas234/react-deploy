@@ -15,7 +15,8 @@ import { Helmet } from "react-helmet";
 const NewsDetails = () => {
   const { uniqueID } = useParams();
   const [matchNews, setMatchNews] = useState([]);
-  const url = window.location.href;
+  const url =
+    "https://react-deploy-vercel1.vercel.app/news/655b252b5104d53d530b330f";
 
   useEffect(() => {
     fetch(`https://server.eiqraprotidin.com/news/${uniqueID}`)
@@ -168,7 +169,7 @@ const NewsDetails = () => {
                               <meta name="twitter:card" content="summary" /> */}
                             </Helmet>
                             <FacebookShareButton
-                              url="https://react-deploy-vercel1.vercel.app/news/655b252b5104d53d530b330f"
+                              url={url}
                               quote={"Nice"}
                               hashtag="#news"
                               style={{ border: "none", background: "none" }}
