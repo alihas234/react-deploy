@@ -167,7 +167,8 @@ const NewsDetails = () => {
                             </Helmet>
                             <FacebookShareButton
                               url={url}
-                              quote={newsContent}
+                              quote={"Nice"}
+                              hashtag="#news"
                               style={{ border: "none", background: "none" }}
                               // {...{
                               //   og: {
