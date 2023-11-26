@@ -168,9 +168,17 @@ const NewsDetails = () => {
                             <FacebookShareButton
                               url={url}
                               quote={newsTitle}
-                              style={{
-                                border: "none",
-                                background: "none",
+                              style={{ border: "none", background: "none" }}
+                              {...{
+                                og: {
+                                  title: newsTitle,
+                                  description: newsContent,
+                                  image: {
+                                    url: image,
+                                    width: 500,
+                                    height: 300,
+                                  },
+                                },
                               }}
                             >
                               <Button
