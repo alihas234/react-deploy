@@ -54,7 +54,7 @@ function App() {
 
   return (
     <AuthContext className="App" sx={{ overflowX: "hidden" }}>
-      <Helmet>
+      {/* <Helmet>
         <title>Hello</title>
         <meta
           property="og:image"
@@ -64,7 +64,7 @@ function App() {
           name="description"
           content="সত্য প্রকাশে আপোষহীন, দৈনিক ইকরা প্রতিদিন"
         />
-      </Helmet>
+      </Helmet> */}
       {preloader.length === 0 && loading ? (
         <Preloader />
       ) : (
