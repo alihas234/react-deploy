@@ -16,7 +16,7 @@ const NewsDetails = () => {
   const { uniqueID } = useParams();
   const [matchNews, setMatchNews] = useState([]);
 
-  const url = window.location.pathname + window.location.search;
+  const url = window.location.href;
 
   useEffect(() => {
     fetch(`https://server.eiqraprotidin.com/news/${uniqueID}`)
@@ -170,7 +170,7 @@ const NewsDetails = () => {
                             </Helmet>
                             <FacebookShareButton
                               url={url}
-                              quote={"Nice"}
+                              quote={matchNews?.[0]?.newsTitle}
                               style={{ border: "none", background: "none" }}
                               // {...{
                               //   og: {
