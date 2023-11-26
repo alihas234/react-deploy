@@ -16,7 +16,7 @@ const NewsDetails = () => {
   const { uniqueID } = useParams();
   const [matchNews, setMatchNews] = useState([]);
 
-  const url = "https://eiqraprotidin.com/news";
+  const url = `https://react-deploy-vercel1.vercel.app/news/${uniqueID}`;
 
   useEffect(() => {
     fetch(`https://server.eiqraprotidin.com/news/${uniqueID}`)
