@@ -143,7 +143,7 @@ const NewsDetails = () => {
                           >
                             <Helmet>
                               {/* General tags */}
-                              <title>{newsTitle}</title>
+                              <title>Wow</title>
                               <meta property="og:image" content={image} />
                               <meta
                                 name="fb:app_id"

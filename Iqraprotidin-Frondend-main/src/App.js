@@ -55,7 +55,7 @@ function App() {
   return (
     <AuthContext className="App" sx={{ overflowX: "hidden" }}>
       <Helmet>
-        <title>ইকরা প্রতিদিন</title>
+        <title>Hello</title>
         <meta
           property="og:image"
           content="https://i.ibb.co/6s8Dc1N/300375281-501355718661040-8852605997729506088-n-1.jpg"
