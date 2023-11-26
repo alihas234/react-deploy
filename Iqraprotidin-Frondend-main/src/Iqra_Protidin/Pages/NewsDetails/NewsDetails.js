@@ -12,7 +12,7 @@ import { useParams } from "react-router-dom";
 import { FacebookShareButton, TwitterShareButton } from "react-share";
 import { Helmet } from "react-helmet";
 
-const NewsDetails = ({ shareButton }) => {
+const NewsDetails = () => {
   const { uniqueID } = useParams();
   const [matchNews, setMatchNews] = useState([]);
 
@@ -171,7 +171,45 @@ const NewsDetails = ({ shareButton }) => {
                               />
                               <meta name="twitter:card" content="summary" /> */}
                             </Helmet>
-                            {shareButton}
+                            <FacebookShareButton
+                              url={`https://react-deploy-vercel1.vercel.app/news/${_id}`}
+                              quote={"Nice"}
+                              style={{ border: "none", background: "none" }}
+                              // {...{
+                              //   og: {
+                              //     title: newsTitle,
+                              //     description: newsContent,
+                              //     image: {
+                              //       url: image,
+                              //       width: 500,
+                              //       height: 300,
+                              //     },
+                              //   },
+                              // }}
+                              onClick={console.log(
+                                // url,
+                                newsTitle,
+                                newsContent,
+                                image
+                              )}
+                            >
+                              <Button
+                                variant="contained"
+                                sx={{
+                                  textTransform: "unset",
+                                  backgroundColor: "#124E6C",
+                                  "&:hover": {
+                                    backgroundColor: "#087aea",
+                                    transform: "scale(1.1)",
+                                  },
+                                }}
+                              >
+                                <i className="fab fa-facebook me-2 fs-4"></i>{" "}
+                                <span style={{ fontWeight: "bold" }}>
+                                  Facebook
+                                </span>
+                              </Button>
+                            </FacebookShareButton>
                             <TwitterShareButton
                               url={`https://react-deploy-vercel1.vercel.app/news/${_id}`}
                               title={newsTitle}

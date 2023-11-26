@@ -122,27 +122,7 @@ function App() {
               }
             />
 
-            <Route
-              path="news/:uniqueID"
-              element={
-                <NewsDetails
-                  shareButton={
-                    <FacebookShareButton
-                      url={`https://react-deploy-vercel1.vercel.app/news/:uniqueID`}
-                      quote={"Nice"}
-                      style={{ border: "none", background: "none" }}
-                      onClick={() => console.log("Facebook Share Clicked")}
-                    >
-                      {/* You can style the button using inline styles or a separate stylesheet */}
-                      <span style={{ cursor: "pointer" }}>
-                        <i className="fab fa-facebook me-2 fs-4"></i>{" "}
-                        <span style={{ fontWeight: "bold" }}>Facebook</span>
-                      </span>
-                    </FacebookShareButton>
-                  }
-                />
-              }
-            />
+            <Route path="news/:uniqueID" element={<NewsDetails />} />
             <Route path="/e-paper" element={<EPaperContainer />} />
             <Route
               path="admin/*"
