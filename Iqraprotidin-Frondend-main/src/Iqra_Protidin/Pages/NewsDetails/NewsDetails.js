@@ -15,13 +15,19 @@ import { Helmet } from "react-helmet";
 const NewsDetails = () => {
   const { uniqueID } = useParams();
   const [matchNews, setMatchNews] = useState([]);
-
-  const url = `https://react-deploy-vercel1.vercel.app/news/${uniqueID}`;
+  const [url, setUrl] = useState("");
 
   useEffect(() => {
     fetch(`https://server.eiqraprotidin.com/news/${uniqueID}`)
       .then((result) => result.json())
-      .then((data) => setMatchNews(data));
+      .then((data) => {
+        setMatchNews(data);
+
+        const constructedUrl = `https://eiqraprotidin.com/news/${uniqueID}`;
+        setUrl(constructedUrl);
+
+        console.log(constructedUrl);
+      });
   }, [uniqueID]);
 
   return (
@@ -170,7 +176,7 @@ const NewsDetails = () => {
                             </Helmet>
                             <FacebookShareButton
                               url={url}
-                              quote={"Nice"}
+                              quote={`${matchNews.newsTitle} - ${matchNews.newsContent}`}
                               style={{ border: "none", background: "none" }}
                               // {...{
                               //   og: {
