@@ -11,7 +11,6 @@ import RelatedNews from "../HomeContainer/RelatedNews/RelatedNews";
 import { useParams } from "react-router-dom";
 import { FacebookShareButton, TwitterShareButton } from "react-share";
 import { Helmet } from "react-helmet";
-import { FacebookButton, FacebookCount } from "react-social";
 
 const NewsDetails = () => {
   const { uniqueID } = useParams();
@@ -169,8 +168,28 @@ const NewsDetails = () => {
                               />
                               <meta name="twitter:card" content="summary" /> */}
                             </Helmet>
-                            <FacebookButton url={url} appId={617144390234776}>
-                              <FacebookCount url={url} />
+                            <FacebookShareButton
+                              url={url}
+                              quote={newsTitle}
+                              style={{ border: "none", background: "none" }}
+                              // {...{
+                              //   og: {
+                              //     title: newsTitle,
+                              //     description: newsContent,
+                              //     image: {
+                              //       url: image,
+                              //       width: 500,
+                              //       height: 300,
+                              //     },
+                              //   },
+                              // }}
+                              onClick={console.log(
+                                url,
+                                newsTitle,
+                                newsContent,
+                                image
+                              )}
+                            >
                               <Button
                                 variant="contained"
                                 sx={{
@@ -187,7 +206,7 @@ const NewsDetails = () => {
                                   Facebook
                                 </span>
                               </Button>
-                            </FacebookButton>
+                            </FacebookShareButton>
                             <TwitterShareButton
                               url={url}
                               title={newsTitle}
