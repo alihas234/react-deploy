@@ -15,19 +15,13 @@ import { Helmet } from "react-helmet";
 const NewsDetails = () => {
   const { uniqueID } = useParams();
   const [matchNews, setMatchNews] = useState([]);
-  // const [url, setUrl] = useState("");
+
+  // const url = `https://react-deploy-vercel1.vercel.app/news/${uniqueID}`;
 
   useEffect(() => {
     fetch(`https://server.eiqraprotidin.com/news/${uniqueID}`)
       .then((result) => result.json())
-      .then((data) => {
-        setMatchNews(data);
-
-        // const constructedUrl = `https://eiqraprotidin.com/news/${uniqueID}`;
-        // setUrl(constructedUrl);
-
-        // console.log(constructedUrl);
-      });
+      .then((data) => setMatchNews(data));
   }, [uniqueID]);
 
   return (
@@ -154,7 +148,7 @@ const NewsDetails = () => {
                               <meta property="og:image" content={image} />
                               <meta
                                 property="og:url"
-                                content={`https://eiqraprotidin.com/news/${_id}`}
+                                content={`https://react-deploy-vercel1.vercel.app/news/${_id}`}
                               />
                               <meta
                                 name="fb:app_id"
@@ -178,8 +172,8 @@ const NewsDetails = () => {
                               <meta name="twitter:card" content="summary" /> */}
                             </Helmet>
                             <FacebookShareButton
-                              url={`https://eiqraprotidin.com/news/${_id}`}
-                              quote={newsTitle}
+                              url={`https://react-deploy-vercel1.vercel.app/news/${_id}`}
+                              quote={"Nice"}
                               style={{ border: "none", background: "none" }}
                               // {...{
                               //   og: {
@@ -193,7 +187,7 @@ const NewsDetails = () => {
                               //   },
                               // }}
                               onClick={console.log(
-                                url,
+                                // url,
                                 newsTitle,
                                 newsContent,
                                 image
@@ -217,7 +211,7 @@ const NewsDetails = () => {
                               </Button>
                             </FacebookShareButton>
                             <TwitterShareButton
-                              url={url}
+                              url={`https://react-deploy-vercel1.vercel.app/news/${_id}`}
                               title={newsTitle}
                               style={{
                                 border: "none",
