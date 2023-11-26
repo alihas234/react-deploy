@@ -133,20 +133,11 @@ function App() {
                       style={{ border: "none", background: "none" }}
                       onClick={() => console.log("Facebook Share Clicked")}
                     >
-                      <Button
-                        variant="contained"
-                        sx={{
-                          textTransform: "unset",
-                          backgroundColor: "#124E6C",
-                          "&:hover": {
-                            backgroundColor: "#087aea",
-                            transform: "scale(1.1)",
-                          },
-                        }}
-                      >
+                      {/* You can style the button using inline styles or a separate stylesheet */}
+                      <span style={{ cursor: "pointer" }}>
                         <i className="fab fa-facebook me-2 fs-4"></i>{" "}
                         <span style={{ fontWeight: "bold" }}>Facebook</span>
-                      </Button>
+                      </span>
                     </FacebookShareButton>
                   }
                 />
