@@ -161,7 +161,6 @@ const NewsDetails = () => {
                                 name="facebook:image:src"
                                 content={image || ""}
                               />
-                              <meta name="facebook:card" content="summary" />
 
                               {/* Twitter Card tags */}
                               <meta
