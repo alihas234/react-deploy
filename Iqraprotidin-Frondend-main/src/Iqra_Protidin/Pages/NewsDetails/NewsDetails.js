@@ -156,7 +156,7 @@ const NewsDetails = () => {
                               <meta property="og:url" content={url} />
                               <meta
                                 name="fb:app_id"
-                                content="617144390234776"
+                                content={_id}
                               />
                               {/* <meta name="description" content={newsContent} /> */}
 
